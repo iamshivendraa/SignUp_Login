@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<link rel="stylesheet" href="~/css/Index.css" />
+@model LoginSignUpModel
+<div class="HomeContainer">
+
+<div class="text-center" style="margin:0 auto">
+    <form>
+        <div class="Admin">
+            <h2>Admin Log In</h2>
+            <p>Log in with your registered account.</p>
+        </div>
+
+        <div class="inputBox bg-light p-2 ">
+            <i class="bi bi-envelope-fill" style="position:relative; right:40px;"></i>
+        <input type="text" placeholder="Email" asp-for="Email" />
+        </div>
+        <div class="inputBox bg-light p-2 mt-3">
+            <i class="bi bi-key-fill" style="position:relative; right:40px;"></i>
+            <input type="password" placeholder="Password" asp-for="Password" />
+        </div>
+        <button class="button">Log In</button>
+        <p class="SignUplink">Don't have an account? <a asp-controller="Home" asp-action="SignUp">Sign Up</a></p>
+    </form>
+</div>
+</div>
