@@ -1,1 +1,122 @@
-﻿<h1>This is a SignUp page.</h1>
+﻿@using static SignUpLogin.Models.LoginSignUpModel;
+<link rel="stylesheet" href="~/css/SignUp.css" />
+@model LoginSignUpModel
+
+<div class="SignUpContainer d-flex flex-column">
+        <div class="top-box w-50">
+            <h1>Create Account</h1>
+        </div>
+    <form method="post" asp-controller="Home" asp-action="SignUp" class="SignUpBox d-flex w-50 flex-column gap-2 p-3">
+        <div class="fName_lName d-flex gap-2 w-100">
+            <div class="FirstName w-100">
+                <label asp-for="FirstName"></label>
+                    <input type="text" class="form-control" asp-for="FirstName" class="w-100" />
+            </div>
+            <div class="LastName w-100">
+                    <label asp-for="LastName"></label>
+                <input type="text" class="form-control" asp-for="LastName" class="w-100" />
+                </div>
+        </div>
+        <div class="Email">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" type="text" class="w-100 form-control"/>
+        </div>
+
+        <div class="d-flex gap-2 w-100">
+            <div class="w-100">
+                <label asp-for="Password"></label>
+                    <input type="text" asp-for="Password" class="w-100 form-control" />
+            </div>
+            <div class="LastName w-100">
+                    <label asp-for="ConfirmPassword"></label>
+                <input type="text" asp-for="ConfirmPassword" class="w-100 form-control" />
+                </div>
+        </div>
+
+        <div class="d-flex gap-2 w-100">
+            <div class="w-100 d-flex align-items-start  flex-column">
+                <label asp-for="Gender"></label>
+               <div class="d-flex flex-row gap-2">
+                    <input type="radio" asp-for="Gender" class="w-100 " value="Male" />
+                    <label class="form-check-label">
+                        Male
+                    </label>
+                    <input type="radio" asp-for="Gender" class="w-100 " value="Female" />
+                    <label class="form-check-label">
+                        Female
+                    </label>
+               </div>
+            </div>
+
+            <div class="checkbox w-100 d-flex flex-column">
+                <label>Hobbies</label>
+                <div class="d-flex gap-1">
+                    <input type="checkbox" asp-for="Music" value="false" class="form-check"/>
+                    <label class="form-check-label">
+                        Music
+                    </label>
+
+                    <input type="checkbox" asp-for="Sports" value="false" class="form-check" />
+                    <label class="form-check-label">
+                        Sports
+                    </label>
+
+                    <input type="checkbox" asp-for="Travel" value="false" class="form-check" />
+                    <label class="form-check-label">
+                        Travel
+                    </label>
+
+                    <input type="checkbox" asp-for="Movies" value="false" class="form-check" />
+                    <label class="form-check-label">
+                        Movie
+                    </label>
+                </div>
+                
+
+            </div>
+        </div>
+
+        <div class="d-flex gap-2 w-100">
+            <div class="w-100 d-flex flex-column">
+                <label asp-for="sourceOfIncome"></label>
+                <select asp-for="sourceOfIncome" class="form-control" asp-items="Html.GetEnumSelectList<SourceOfIncome>()"></select>
+
+            </div>
+            <div class="w-100 d-flex flex-column">
+                <label asp-for="Income" ></label>
+                <div class="d-flex">
+                    <input type="range" min="20000" max="100000" step="1000" value="20000" id="idrange" asp-for="Income" class=" w-100 mt-2" />
+                    <div id="idvalue">20K</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex gap-2 w-100">
+            <div class="w-100 d-flex flex-column">
+                <label >Upload profile picture</label>
+                <input type="file" class="form-control"/>
+
+            </div>
+            <div class="w-100">
+                <label asp-for="Age"></label>
+                <input type="text" asp-for="Age" class="w-100 form-control" />
+            </div>
+        </div>
+
+        <div class="Bio">
+            <label>Bio</label>
+            <textarea asp-for="Bio" class="w-100 form-control"></textarea>
+        </div>
+
+        <button type="submit" class="d-flex align-self-end justify-content-center w-25 p-2 mt-3">Create</button>
+
+           
+          
+    </form>
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+    $('#idrange').change(function () {
+        $('#idvalue').text( parseInt($('#idrange').val())/1000 +"K" )
+    })
+</script>
