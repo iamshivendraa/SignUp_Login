@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SignUpLogin.Data;
 using SignUpLogin.Models;
+using SignUpLogin.ViewModel;
 using System.Diagnostics;
 
 namespace SignUpLogin.Controllers
@@ -20,29 +21,24 @@ namespace SignUpLogin.Controllers
             IEnumerable<LoginSignUpModel> objAccountList = _db.Accounts;
             return View();
         }
-        public IActionResult Login()
-        {
-            return View();
-        }
-        //GET
-        public IActionResult SignUp()
-        {
-            return View();
-        }
-        //POST
+        
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult SignUp(LoginSignUpModel obj)
+        public IActionResult Index(LoginViewModel obj)
         {
+            if (ModelState.IsValid)
             {
-                if (ModelState.IsValid)
+                var authentication = _db.Accounts.FirstOrDefault(u => u.Email == obj.Email && u.Password == obj.Password);
+                if (authentication == null)
                 {
-                     _db.Accounts.Add(obj);
-                    _db.SaveChanges();
                     return RedirectToAction("Index");
                 }
+                else
+                {
+                    ModelState.AddModelError("", "Invalid Email or Password!");
+                }
             }
-            return View();
+            return RedirectToAction("Index", "Dashboard", obj);
         }
+
     }
 }
