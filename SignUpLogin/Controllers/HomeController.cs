@@ -28,16 +28,16 @@ namespace SignUpLogin.Controllers
             if (ModelState.IsValid)
             {
                 var authentication = _db.Accounts.FirstOrDefault(u => u.Email == obj.Email && u.Password == obj.Password);
-                if (authentication == null)
+                if (authentication != null)
                 {
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index","Dashboard");
                 }
                 else
                 {
                     ModelState.AddModelError("", "Invalid Email or Password!");
                 }
             }
-            return RedirectToAction("Index", "Dashboard", obj);
+            return RedirectToAction("Index");
         }
 
     }

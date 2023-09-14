@@ -10,6 +10,7 @@
     margin-bottom:-20px !important;
 }
 
+
 .Admin{
     text-align:left;
     position:relative;
@@ -26,12 +27,19 @@
     background-color: #5278a3;
     color:white;
 }
-button{
-    border:none;
-    outline:none;
+button {
+    border: none;
+    outline: none;
+    transition: all ease 0.2s;
 }
 
+
 .inputBox {
-    padding:0 13px;
+    padding-left:13px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+input{
+    outline:none;
 }
