@@ -1,5 +1,37 @@
-﻿@model LoginSignUpModel
-    <div class="alert alert-success">
-        <p>Welcome @Model.FirstName</p>
-        <p>Login successful.</p>
-    </div>
+﻿<link rel="stylesheet" href="~/css/Dashboard.css" />
+@model LoginSignUpModel
+<div class="Dashboard_Container w-auto h-auto p-4 d-flex flex-column">
+    <p>Welcome, @Model.FirstName❤️</p>
+    <div><span style="font-weight:bold">First Name</span> : @Model.FirstName</div>
+    <div><span style="font-weight:bold">Last Name</span> : @Model.LastName</div>
+    <div><span style="font-weight:bold">Email</span> : @Model.Email</div>
+    <div><span style="font-weight:bold">Gender</span> : @Model.Gender</div>
+    <div><span style="font-weight:bold">Age</span> : @Model.Age</div>
+    <div><span style="font-weight:bold">Hobbies</span> : 
+        @{
+            if (Model.Music)
+            {
+                <span>Music</span>
+            }
+            if (Model.Sports)
+            {
+                <span>Sports</span>
+            }
+            if (Model.Travel)
+            {
+                <span>Travel</span>
+            }
+            if (Model.Movies)
+            {
+                <span>Movie</span>
+            }
+            }
+    <div><span style="font-weight:bold">Source of Income</span> : @Model.sourceOfIncome</div>
+    <div><span style="font-weight:bold">Income</span> : @Model.Income</div>
+
+    <div><span style="font-weight:bold">Bio</span> : @Model.Bio</div>
+</div>
+<button class="align-self-center p-2  mt-3">Log Out</button>
+</div>
+
+

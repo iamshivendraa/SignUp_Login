@@ -32,6 +32,9 @@ button {
     outline: none;
     transition: all ease 0.2s;
 }
+button:active{
+    transform:scale(0.9);
+}
 
 
 .inputBox {

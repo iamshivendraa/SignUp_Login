@@ -30,18 +30,18 @@ h1 {
 }
 
 label {
-    color: #1bb993;
+    color: #5278a3;
 }
 
 button {
-    background-color:#1bb993;
-    border:none;
-    border-radius:5px;
-    color:white;
+    background-color: #5278a3;
+    border: none;
+    border-radius: 5px;
+    color: white;
 }
 #idvalue {
-    color:white;
-    background-color: #1bb993;
-    padding:3px;
-    border-radius:5px;
+    color: white;
+    background-color: #5278a3;
+    padding: 3px;
+    border-radius: 5px;
 }

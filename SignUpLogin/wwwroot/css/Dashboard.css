@@ -1,0 +1,28 @@
+﻿body {
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.Dashboard_Container {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius:10px;
+}
+
+button {
+    border-radius: 5px;
+    border: none;
+    color: white;
+    outline: none;
+    background-color: #5278a3;
+    transition: all ease 0.2s;
+}
+button:active{
+    outline:none;
+    transform:scale(0.9);
+}
+p {
+    color: #5278a3;
+    font-size: 16px;
+    font-weight: bold;
+}
