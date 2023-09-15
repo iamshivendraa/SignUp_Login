@@ -1,12 +1,12 @@
-﻿
-.SignUpContainer {
-    background-image: url(../lib/background.png);
-    box-shadow: inset 0 0 0 2000px rgba(239, 243, 243, .5);
-    height: 100vh;
+﻿body {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width:100vw;
+    background-image: url(../lib/background.png);
     margin-bottom: -20px !important;
+
 }
 
 .SignUpBox {
@@ -29,19 +29,30 @@ h1 {
     text-align: center;
 }
 
-label {
-    color: #5278a3;
-}
+
 
 button {
     background-color: #5278a3;
     border: none;
     border-radius: 5px;
     color: white;
+    transition: all ease 0.2s;
+}
+
+button:active{
+    transform:scale(0.9);
 }
 #idvalue {
     color: white;
     background-color: #5278a3;
     padding: 3px;
     border-radius: 5px;
+}
+
+.color-blue {
+    color: #5278a3;
+}
+
+.Container{
+    border-radius:10px;
 }

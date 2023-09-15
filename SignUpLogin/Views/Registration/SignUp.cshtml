@@ -2,38 +2,38 @@
 <link rel="stylesheet" href="~/css/SignUp.css" />
 @model LoginSignUpModel
 
-<div class="SignUpContainer d-flex flex-column">
 
-    <form method="post" asp-controller="Registration" asp-action="SignUp" class="SignUpBox d-flex w-auto h-auto flex-column gap-2 p-3">
-        <div class="top-box w-100">
+
+        <div class="top-box w-100 ">
             <h1>Create Account</h1>
         </div>
+    <form method="post" asp-controller="Registration" asp-action="SignUp" class="SignUpBox d-flex w-auto h-auto flex-column gap-2 p-3">
         <div class="fName_lName d-flex gap-2 w-100">
             <div class="FirstName w-100">
-                <label asp-for="FirstName"></label>
+                <label asp-for="FirstName" class="color-blue"></label>
                     <input type="text" class="form-control w-100" asp-for="FirstName" />
                     <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
             <div class="LastName w-100">
-                    <label asp-for="LastName"></label>
+                <label asp-for="LastName" class="color-blue"></label>
                 <input type="text" class="form-control w-100" asp-for="LastName"  />
                 <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
         </div>
         <div class="Email">
-            <label asp-for="Email"></label>
+            <label asp-for="Email" class="color-blue"></label>
             <input asp-for="Email" type="email" class="w-100 form-control"/>
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
 
         <div class="d-flex gap-2 w-100">
             <div class="w-100">
-                <label asp-for="Password"></label>
+                <label asp-for="Password" class="color-blue"></label>
                     <input type="password" asp-for="Password" class="w-100 form-control" />
                     <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="LastName w-100">
-                    <label asp-for="ConfirmPassword"></label>
+                <label asp-for="ConfirmPassword" class="color-blue"></label>
                 <input type="password" asp-for="ConfirmPassword" class="w-100 form-control" />
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                 </div>
@@ -41,7 +41,7 @@
 
         <div class="d-flex gap-2 w-100">
             <div class="w-100 d-flex align-items-start  flex-column">
-                <label asp-for="Gender"></label>
+                <label asp-for="Gender" class="color-blue"></label>
                <div class="d-flex flex-row gap-2">
                     <input type="radio" asp-for="Gender" class="w-100 " value="Male" />
                     <label class="form-check-label">
@@ -55,7 +55,7 @@
             </div>
 
             <div class="checkbox w-100 d-flex flex-column">
-                <label>Hobbies</label>
+                <label class="color-blue">Hobbies</label>
                 <div class="d-flex gap-1">
                     <input type="checkbox" asp-for="Music" class="form-check"/>
                     <label class="form-check-label">
@@ -84,12 +84,12 @@
 
         <div class="d-flex gap-2 w-100">
             <div class="w-100 d-flex flex-column">
-                <label asp-for="sourceOfIncome"></label>
+                <label asp-for="sourceOfIncome" class="color-blue"></label>
                 <select asp-for="sourceOfIncome" class="form-control" asp-items="Html.GetEnumSelectList<SourceOfIncome>()"></select>
 
             </div>
             <div class="w-100 d-flex flex-column">
-                <label asp-for="Income" ></label>
+                <label asp-for="Income" class="color-blue"></label>
                 <div class="d-flex">
                     <input type="range" min="20000" max="100000" step="1000" value="20000" id="idrange" asp-for="Income" class=" w-100 mt-2" />
                     <div id="idvalue">20K</div>
@@ -104,14 +104,14 @@
 
             </div>
             <div class="w-100">
-                <label asp-for="Age"></label>
+                <label asp-for="Age" class="color-blue"></label>
                 <input type="text" asp-for="Age" class="w-100 form-control" />
                 <span asp-validation-for="Age" class="text-danger"></span>
             </div>
         </div>
 
         <div class="Bio">
-            <label>Bio</label>
+            <label class="color-blue">Bio</label>
             <textarea asp-for="Bio" class="w-100 form-control"></textarea>
         </div>
 
@@ -120,7 +120,6 @@
            
           
     </form>
-</div>
 <script src="~/lib/jquery/dist/jquery.js"></script>
 <script>
     $('#idrange').change(function () {

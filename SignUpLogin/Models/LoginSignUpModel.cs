@@ -17,6 +17,7 @@ namespace SignUpLogin.Models
         public string? FirstName {  get; set; }
 
         //Last Name
+        [Required(ErrorMessage ="Last Name is required.")]
         [StringLength(50, ErrorMessage = "The {0} must be at least {2} and at most {1} characters long.", MinimumLength = 2)]
         [RegularExpression(@"^[A-Za-z]+$", ErrorMessage = "Last Name should contain only letters.")]
         [DisplayName("Last Name")]
