@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SignUpLogin.Data;
 using SignUpLogin.Models;
-using SignUpLogin.ViewModel;
 using System.Diagnostics;
 
 namespace SignUpLogin.Controllers
@@ -18,26 +17,26 @@ namespace SignUpLogin.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<LoginSignUpModel> objAccountList = _db.Accounts;
+            IEnumerable<LoginSignUpModel> objAccountList= _db.Accounts;
             return View();
         }
         
         [HttpPost]
-        public IActionResult Index(LoginViewModel obj)
+        public IActionResult Index(LoginModel obj)
         {
             if (ModelState.IsValid)
             {
-                var authentication = _db.Accounts.FirstOrDefault(u => u.Email == obj.Email && u.Password == obj.Password);
-                if (authentication != null)
+                var User = _db.Accounts.FirstOrDefault(u => u.Email == obj.Email && u.Password == obj.Password);
+                if (User != null)
                 {
-                    return RedirectToAction("Index","Dashboard");
+                    return RedirectToAction("Index","Dashboard",User);
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Invalid Email or Password!");
+                    ModelState.AddModelError("Password", "Invalid Email or Password!");
                 }
             }
-            return RedirectToAction("Index");
+            return View("Index",obj);
         }
 
     }
