@@ -1,12 +1,16 @@
 ﻿body {
-    height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../lib/background.png);
+    box-shadow: inset 0 0 0 2000px rgba(239, 243, 243, .5);
 }
 .Dashboard_Container {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius:10px;
+    background-color:white;
+
 }
 
 button {

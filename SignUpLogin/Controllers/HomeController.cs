@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using SignUpLogin.Data;
 using SignUpLogin.Models;
 using System.Diagnostics;
@@ -38,6 +39,5 @@ namespace SignUpLogin.Controllers
             }
             return View("Index",obj);
         }
-
     }
 }

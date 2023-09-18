@@ -1,6 +1,9 @@
 ﻿<link rel="stylesheet" href="~/css/Dashboard.css" />
 @model LoginSignUpModel
-<div class="Dashboard_Container w-auto h-auto p-4 d-flex flex-column">
+<div class="d-flex justify-content-center align-items-center">
+    <h1>Dashboard</h1>
+</div>
+<div class="Dashboard_Container w-auto h-auto p-4 d-flex flex-column border-1">
     <p>Welcome, @Model.FirstName❤️</p>
     <div><span style="font-weight:bold">First Name</span> : @Model.FirstName</div>
     <div><span style="font-weight:bold">Last Name</span> : @Model.LastName</div>
