@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 namespace SignUpLogin.Models
 {
-    public class LoginSignUpModel
+    public class SignUpModel
     {
         [Key]
         public int Id { get; set; }
@@ -73,6 +73,8 @@ namespace SignUpLogin.Models
 
         //Bio
         public string? Bio { get; set; }
+        
+
 
 
         //Source of Income enum

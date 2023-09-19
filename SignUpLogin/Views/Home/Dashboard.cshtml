@@ -1,5 +1,5 @@
 ﻿<link rel="stylesheet" href="~/css/Dashboard.css" />
-@model LoginSignUpModel
+@model SignUpModel
 <div class="d-flex justify-content-center align-items-center">
     <h1>Dashboard</h1>
 </div>
@@ -34,7 +34,9 @@
 
     <div><span style="font-weight:bold">Bio</span> : @Model.Bio</div>
 </div>
-<button class="align-self-center p-2  mt-3">Log Out</button>
+<a asp-controller="Login" asp-action="LogOut" class="btn btn-danger align-self-center p-2  mt-3">Log Out</a>
 </div>
+
+ 
 
 

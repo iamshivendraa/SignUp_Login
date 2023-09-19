@@ -21,14 +21,14 @@ namespace SignUpLogin.Controllers
         //POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult SignUp(LoginSignUpModel obj)
+        public IActionResult SignUp(SignUpModel obj)
         {
             {
                 if (ModelState.IsValid)
                 {
                     _db.Accounts.Add(obj);
                     _db.SaveChanges();
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Login");
                 }
             }
             return View(obj);
