@@ -1,0 +1,43 @@
+﻿@model List<SignUpModel> 
+<div class="d-flex align-items-center justify-content-center mt-3"><h1>Account</h1></div>
+<table class="table table-bordered mt-3">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>Music</th>
+            <th>Sports</th>
+            <th>Travel</th>
+            <th>Movies</th>
+            <th>Source of Income</th>
+            <th>Income</th>
+            <th>Bio</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var obj in Model){
+        <tr>
+            <td>@obj.FirstName</td>
+            <td>@obj.LastName</td>
+            <td>@obj.Email</td>
+            <td>@obj.Gender</td>
+            <td>@obj.Age</td>
+            <td>@obj.Music</td>
+            <td>@obj.Sports</td>
+            <td>@obj.Travel</td>
+            <td>@obj.Movies</td>
+            <td>@obj.sourceOfIncome</td>
+            <td>@obj.Income</td>
+            <td>@obj.Bio</td>
+            <td><a class="btn btn-primary">Update</a></td>
+            <td><a class="btn btn-danger">Delete</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+<div class="d-flex align-items-center justify-content-center" ><a class="btn btn-success" asp-controller="Registration" asp-action="SignUp">Add User</a></div>
