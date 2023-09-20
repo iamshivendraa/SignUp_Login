@@ -19,9 +19,6 @@
 .top-box {
     height: 10%;
     color: #6c6e6e;
-    justify-content: center;
-    display: flex;
-    align-items: center;
     background-color: #eef0f2;
     border-radius: 5px 5px 0 0;
 }

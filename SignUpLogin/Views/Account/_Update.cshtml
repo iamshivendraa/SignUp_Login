@@ -1,0 +1,129 @@
+﻿
+<link rel="stylesheet" href="~/css/Accounts.css" />
+<a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter"><i class="bi bi-pencil-square"></i></a>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header" >
+                <h2 style="color:#5278a3">Update</h2>
+                <button type="button" class="btn btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="fName_lName d-flex gap-2 w-100">
+                        <div class="FirstName w-100">
+                            <label  class="color-blue"></label>
+                            <input type="text" class="form-control w-100" />
+                            <span  class="text-danger"></span>
+                        </div>
+                        <div class="LastName w-100">
+                            <label  class="color-blue"></label>
+                            <input type="text" class="form-control w-100"  />
+                            <span  class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="Email">
+                        <label  class="color-blue"></label>
+                        <input  type="email" class="w-100 form-control" />
+                        <span  class="text-danger"></span>
+                    </div>
+
+                    <div class="d-flex gap-2 w-100">
+                        <div class="w-100">
+                            <label  class="color-blue"></label>
+                            <input type="password"  class="w-100 form-control" />
+                            <span  class="text-danger"></span>
+                        </div>
+                        <div class="LastName w-100">
+                            <label  class="color-blue"></label>
+                            <input  class="w-100 form-control" />
+                            <span  class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-2 w-100">
+                        <div class="w-100 d-flex align-items-start  flex-column">
+                            <label class="color-blue"></label>
+                            <div class="d-flex flex-row gap-2">
+                                <input type="radio"  class="w-100 " value="Male" />
+                                <label class="form-check-label">
+                                    Male
+                                </label>
+                                <input type="radio"  class="w-100 " value="Female" />
+                                <label class="form-check-label">
+                                    Female
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="checkbox w-100 d-flex flex-column">
+                            <label class="color-blue">Hobbies</label>
+                            <div class="d-flex gap-1">
+                                <input type="checkbox"  class="form-check" />
+                                <label class="form-check-label">
+                                    Music
+                                </label>
+
+                                <input type="checkbox"  class="form-check" />
+                                <label class="form-check-label">
+                                    Sports
+                                </label>
+
+                                <input type="checkbox"  class="form-check" />
+                                <label class="form-check-label">
+                                    Travel
+                                </label>
+
+                                <input type="checkbox"  class="form-check" />
+                                <label class="form-check-label">
+                                    Movie
+                                </label>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-2 w-100">
+                        <div class="w-100 d-flex flex-column">
+                            <label class="color-blue"></label>
+                            <select  class="form-control" ></select>
+
+                        </div>
+                        <div class="w-100 d-flex flex-column">
+                            <label class="color-blue"></label>
+                            <div class="d-flex">
+                                <input type="range" min="20000" max="100000" step="1000" value="20000" id="idrange"  class=" w-100 mt-2" />
+                                <div id="idvalue">20K</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-2 w-100">
+                        <div class="w-100 d-flex flex-column">
+                            <label>Upload profile picture</label>
+                            <input type="file" class="form-control" />
+
+                        </div>
+                        <div class="w-100">
+                            <label  class="color-blue"></label>
+                            <input type="text"  class="w-100 form-control" />
+                            <span  class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="Bio">
+                        <label class="color-blue">Bio</label>
+                        <textarea  class="w-100 form-control"></textarea>
+                    </div>
+                </form>
+               
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
+</div>

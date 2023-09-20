@@ -1,10 +1,10 @@
 ﻿@using static SignUpLogin.Models.SignUpModel;
 <link rel="stylesheet" href="~/css/SignUp.css" />
 @model SignUpModel
-        <div class="top-box w-100 ">
+        <div class="top-box w-100 d-flex align-items-center justify-content-center">
             <h1>Create Account</h1>
         </div>
-    <form method="post" enctype="multipart/form-data" asp-controller="Registration" asp-action="SignUp" class="SignUpBox d-flex w-auto h-auto flex-column gap-2 p-3">
+    <form method="post" asp-controller="Registration" asp-action="SignUp" class="SignUpBox d-flex w-auto h-auto flex-column gap-2 p-3">
         <div class="fName_lName d-flex gap-2 w-100">
             <div class="FirstName w-100">
                 <label asp-for="FirstName" class="color-blue"></label>
@@ -97,6 +97,7 @@
         <div class="d-flex gap-2 w-100">
             <div class="w-100 d-flex flex-column">
                 <label >Upload profile picture</label>
+                <input type="file" class="form-control" />
 
             </div>
             <div class="w-100">
