@@ -1,15 +1,14 @@
 ﻿
-@using static SignUpLogin.Models.SignUpModel;
-@model List<SignUpModel> 
+@model IEnumerable<SignUpModel> 
 <link rel="stylesheet" href="~/css/Accounts.css" />
-<div class="Container w-auto h-auto p-3">
+<div class="Container w-auto h-100 p-3">
 <div class="d-flex flex-row align-items-center justify-content-between">
 <div class="heading align-self-end">Account Details</div>
       <a class="btn btn-success d-flex gap-1" asp-controller="Registration" asp-action="SignUp"><i class="bi bi-plus-lg"></i>Add User</a>    
  </div>
  <hr />
-    <div class="table_container ">
-<table class=" table table-striped p-2">
+    <div class="table_container h-25 table-responsive ">
+        <table class=" table table-striped p-2">
     <thead>
         <tr>
             <th>First Name</th>
@@ -43,11 +42,20 @@
             <td>@obj.Income</td>
             <td>@obj.Bio</td>
             <td class="d-flex gap-3 ">
-                                <div>      
-                                    @Html.Partial("_Update", Model)
+                                <div>
+                                <button asp-route-id="@obj.Id" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#id_@obj.Id"><i class="bi bi-pencil-square"></i></button>
+                                <partial name="_Update" model="obj"/>
+                                   @*  @Html.Partial("_Update",obj) *@
                                 </div>
 
-                <a asp-controller="Account" asp-action="Delete" class="btn btn-danger"><i class="bi bi-trash3"></i></a></td>
+                                <div>
+                                <button asp-route-id="@obj.Id" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Delete_@obj.Id" ><i class="bi bi-trash3"></i></button>
+                                    <partial name="_Delete" model="obj" />
+                                    @*  @Html.Partial("_Update",obj) *@
+                                </div>
+
+                
+            </td>
         </tr>
         }
     </tbody>
@@ -62,4 +70,8 @@
     $('#idrange').change(function () {
         $('#idvalue').text(parseInt($('#idrange').val()) / 1000 + "K")
     })
+
+    function onButton(x){
+        console.warn(x);
+    }
 </script>

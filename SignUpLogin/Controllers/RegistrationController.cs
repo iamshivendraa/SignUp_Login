@@ -40,5 +40,6 @@ namespace SignUpLogin.Controllers
             return View(obj);
 
         }
+
     }
 }

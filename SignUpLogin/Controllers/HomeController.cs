@@ -20,5 +20,6 @@ namespace SignUpLogin.Controllers
             } 
            return  RedirectToAction("Index", "Login");
         }
+
     }
 }

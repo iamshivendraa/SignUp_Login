@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.InteropServices;
 
 namespace SignUpLogin.Models
@@ -73,7 +74,8 @@ namespace SignUpLogin.Models
 
         //Bio
         public string? Bio { get; set; }
-        
+
+        public bool IsDeleted {  get; set; }
 
 
 

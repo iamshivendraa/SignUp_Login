@@ -5,7 +5,7 @@
 namespace SignUpLogin.Migrations
 {
     /// <inheritdoc />
-    public partial class AppDb : Migration
+    public partial class appDb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -16,11 +16,11 @@ namespace SignUpLogin.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ConfirmPassword = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(12)", maxLength: 12, nullable: false),
+                    ConfirmPassword = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Gender = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Music = table.Column<bool>(type: "bit", nullable: false),
                     Sports = table.Column<bool>(type: "bit", nullable: false),
@@ -28,8 +28,9 @@ namespace SignUpLogin.Migrations
                     Movies = table.Column<bool>(type: "bit", nullable: false),
                     sourceOfIncome = table.Column<int>(type: "int", nullable: false),
                     Income = table.Column<int>(type: "int", nullable: true),
-                    Age = table.Column<int>(type: "int", nullable: true),
-                    Bio = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Age = table.Column<int>(type: "int", nullable: false),
+                    Bio = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {

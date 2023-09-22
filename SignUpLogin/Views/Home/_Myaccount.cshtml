@@ -1,0 +1,50 @@
+﻿@model SignUpModel
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLongTitle" style="color:#5278a3">Profile</h3>
+                <button type="button" class="close btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div><span style="font-weight:bold">First Name</span> : @Model.FirstName</div>
+                <div><span style="font-weight:bold">Last Name</span> : @Model.LastName</div>
+                <div><span style="font-weight:bold">Email</span> : @Model.Email</div>
+                <div><span style="font-weight:bold">Gender</span> : @Model.Gender</div>
+                <div><span style="font-weight:bold">Age</span> : @Model.Age</div>
+                <div>
+                <span style="font-weight:bold">Hobbies</span> :
+                @{
+                if (Model.Music)
+                {
+                <span>Music</span>
+                }
+                if (Model.Sports)
+                {
+                <span>Sports</span>
+                }
+                if (Model.Travel)
+                {
+                <span>Travel</span>
+                }
+                if (Model.Movies)
+                {
+                <span>Movie</span>
+                }
+                }
+                <div><span style="font-weight:bold">Source of Income</span> : @Model.sourceOfIncome</div>
+                <div><span style="font-weight:bold">Income</span> : @Model.Income</div>
+
+                <div><span style="font-weight:bold">Bio</span> : @Model.Bio</div>
+               
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                
+            </div>
+        </div>
+    </div>
+</div>

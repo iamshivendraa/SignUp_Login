@@ -4,40 +4,17 @@
 </div>
 <div class="Dashboard_Container w-auto h-auto p-4 d-flex flex-column border-1">
     <p>Welcome, @Model.FirstName❤️</p>
-@*     <div><span style="font-weight:bold">First Name</span> : @Model.FirstName</div>
-    <div><span style="font-weight:bold">Last Name</span> : @Model.LastName</div>
-    <div><span style="font-weight:bold">Email</span> : @Model.Email</div>
-    <div><span style="font-weight:bold">Gender</span> : @Model.Gender</div>
-    <div><span style="font-weight:bold">Age</span> : @Model.Age</div>
-    <div><span style="font-weight:bold">Hobbies</span> : 
-        @{
-            if (Model.Music)
-            {
-                <span>Music</span>
-            }
-            if (Model.Sports)
-            {
-                <span>Sports</span>
-            }
-            if (Model.Travel)
-            {
-                <span>Travel</span>
-            }
-            if (Model.Movies)
-            {
-                <span>Movie</span>
-            }
-            }
-    <div><span style="font-weight:bold">Source of Income</span> : @Model.sourceOfIncome</div>
-    <div><span style="font-weight:bold">Income</span> : @Model.Income</div>
-
-    <div><span style="font-weight:bold">Bio</span> : @Model.Bio</div> *@
+    
+   
 
 <div class="d-flex flex-row justify-content-center align-items-center gap-2">
 <a asp-controller="Account" asp-action="Accounts" class="btn btn-primary align-self-center p-2  mt-3">View All Account</a>
-<a asp-controller="Login" asp-action="LogOut" class="btn btn-secondary align-self-center p-2  mt-3">My Account</a>
+        <div>
+        <a class="btn btn-secondary align-self-center p-2  mt-3" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">My Account</a>
+        <partial name="_MyAccount" />
+        </div>
 <a asp-controller="Login" asp-action="LogOut" class="btn btn-danger align-self-center p-2  mt-3">Log Out</a>
-</div>
+</>
 </div>
 
  

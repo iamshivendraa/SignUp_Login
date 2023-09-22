@@ -22,7 +22,7 @@ namespace SignUpLogin.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("SignUpLogin.Models.LoginSignUpModel", b =>
+            modelBuilder.Entity("SignUpLogin.Models.SignUpModel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -31,12 +31,14 @@ namespace SignUpLogin.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int?>("Age")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("Bio")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ConfirmPassword")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
@@ -45,7 +47,8 @@ namespace SignUpLogin.Migrations
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Gender")
                         .HasColumnType("nvarchar(max)");
@@ -53,9 +56,13 @@ namespace SignUpLogin.Migrations
                     b.Property<int?>("Income")
                         .HasColumnType("int");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<bool>("Movies")
                         .HasColumnType("bit");
@@ -65,7 +72,8 @@ namespace SignUpLogin.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(12)
+                        .HasColumnType("nvarchar(12)");
 
                     b.Property<bool>("Sports")
                         .HasColumnType("bit");

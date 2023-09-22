@@ -7,6 +7,13 @@ namespace SignUpLogin.Data
     {
         public DbSet<SignUpModel> Accounts {  get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<SignUpModel>().HasQueryFilter(e => !e.IsDeleted);
+        }
+
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
             
